@@ -6,4 +6,4 @@ Get notified when a currency exchange rate changes
 Run `npm install`
 
 ## Usage
-Run `node index.js`
+Run `npm start`

@@ -7,6 +7,7 @@ const CURRENCY_NAME = 'Dolar';
 const INTERVAL_IN_SECONDS = 5;
 
 let precioCompra = 0;
+console.log('Starting notifier...');
 setInterval(tick, INTERVAL_IN_SECONDS * 1000);
 
 async function tick() {
