@@ -6,7 +6,7 @@ const path = require('path');
 const ASSETS_DIRECTORY = path.join(__dirname, 'assets');
 // https://icons8.com/icon/110854/d
 const APP_ICON = path.join(ASSETS_DIRECTORY, 'icons8-d-16.png');
-const URL = 'http://www.dolaria.com.ar/Api/Data/0/GetCotizaciones'
+const URL = 'http://www.dolaria.com.ar/Api/Data/0/GetCotizaciones';
 const CURRENCY_CODE = 'USD';
 const CURRENCY_NAME = 'Dolar';
 const INTERVAL_IN_SECONDS = 60;
@@ -28,7 +28,7 @@ app.on('ready', () => {
 
 app.on('quit', () => {
   clearInterval(timer);
-  console.log('Exiting.')
+  console.log('Exiting.');
 });
 
 function createTray() {
@@ -66,12 +66,13 @@ async function tick() {
 
 async function get(currencyCode) {
   const response = await axios.get(URL);
-  return response.data.Cotizaciones
-    .filter(currency => currency.MonedaCodigo === currencyCode)[0];
+  return response.data.Cotizaciones.filter(
+    currency => currency.MonedaCodigo === currencyCode,
+  )[0];
 }
 
 function notify(currencyName, before, now) {
-  const change = (before < now) ? 'SUBIÓ' : 'BAJÓ';
+  const change = before < now ? 'SUBIÓ' : 'BAJÓ';
   const title = `${change} el ${currencyName}`;
   const diff = (now - before).toFixed(2);
   const message = `Antes: ${before} / Ahora: ${now} / Diferencia: ${diff}`;
