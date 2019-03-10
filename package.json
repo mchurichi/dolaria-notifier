@@ -3,11 +3,16 @@
   "version": "0.0.1",
   "description": "Dolaria notifier",
   "main": "index.js",
+  "homepage": "https://github.com/mchurichi/dolaria-notifier",
   "scripts": {
-    "start": "node index.js",
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": {
+    "name": "Maximiliano Churichi",
+    "email": "mchurichi@gmail.com",
+    "url": "https://github.com/mchurichi"
+  },
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
